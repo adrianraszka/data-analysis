@@ -1,4 +1,4 @@
-### Histogram wieku
+#TODO: ### Histogram wieku
 # import csv
 # import pandas as pd
 # from scipy import stats
@@ -36,83 +36,103 @@
 # plt.show()
 
 
-###Histogram skategoryzowany
+# TODO: ###Histogram skategoryzowany
+# import pandas as pd
+# from matplotlib import pyplot as plt
+# import numpy as np
+# from matplotlib import style
+#
+# df = pd.read_csv('adultProba.csv')
+#
+#
+# fig = plt.figure()
+#
+#
+#
+#
+# male_u50 = []
+# male_o50 = []
+# female_u50 = []
+# female_o50 = []
+# for index, row in df.iterrows():
+#     #male under 50k
+#     if row['sex'] == 'Male' and row['Income'] == '<=50K':
+#         male_u50.append(row['Age'])
+#     #male over 50k
+#     elif row['sex'] == 'Male' and row['Income'] == '>50K':
+#         male_o50.append(row['Age'])
+#
+#     # female under 50k
+#     elif row['sex'] == 'Female' and row['Income'] == '<=50K':
+#         female_u50.append(row['Age'])
+#
+#     # female over 50k
+#     elif row['sex'] == 'Female' and row['Income'] == '>50K':
+#         female_o50.append(row['Age'])
+#
+#
+# ax1 = fig.add_subplot(221)
+# ax2 = fig.add_subplot(222)
+# ax3 = fig.add_subplot(223)
+# ax4 = fig.add_subplot(224)
+#
+# ax1.hist(male_u50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
+#              color='r', edgecolor='black', linewidth=0.5)
+# ax2.hist(male_o50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
+#              color='g', edgecolor='black', linewidth=0.5)
+# ax3.hist(female_u50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
+#              color='b', edgecolor='black', linewidth=0.5)
+# ax4.hist(female_o50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
+#              color='k', edgecolor='black', linewidth=0.5)
+#
+# a,b = 0,100
+#
+# ax1.set_xlabel('Wiek')
+# ax1.set_ylabel('Ilość osób')
+# ax1.set_title('Mężczyźni zarabiający powyżej 50 000')
+# ax1.set_ylim(a,b)
+#
+# ax2.set_xlabel('Wiek')
+# ax2.set_ylabel('Ilość osób')
+# ax2.set_title('Mężczyźni zarabiający poniżej 50 000')
+# ax2.set_ylim(a,b)
+#
+# ax3.set_xlabel('Wiek')
+# ax3.set_ylabel('Ilość osób')
+# ax3.set_title('Kobiety zarabiający powyżej 50 000')
+# ax3.set_ylim(a,b)
+#
+# ax4.set_xlabel('Wiek')
+# ax4.set_ylabel('Ilość osób')
+# ax4.set_title('Kobiety zarabiający poniżej 50 000')
+# ax4.set_ylim(a,b)
+#
+# plt.tight_layout()
+# plt.show()
+
+# TODO: Wartość oczekiwana
 import pandas as pd
 from matplotlib import pyplot as plt
 import numpy as np
-df = pd.read_csv('adultProba.csv')
 from matplotlib import style
 
-style.use('fivethirtyeight')
+df = pd.read_csv('adultProba.csv')
 
-fig = plt.figure()
+# for index, row in df.iterrows():
+#     print(index, row['Age'])
 
-
-
-
-male_u50 = []
-male_o50 = []
-female_u50 = []
-female_o50 = []
+age_list = []
 for index, row in df.iterrows():
-    #male under 50k
-    if row['sex'] == 'Male' and row['Income'] == '<=50K':
-        male_u50.append(row['Age'])
-    #male over 50k
-    elif row['sex'] == 'Male' and row['Income'] == '>50K':
-        male_o50.append(row['Age'])
+    age_list.append(row['Age'])
+average = (sum(age_list)/(index + 1)) #642 indexy, ale licząc od 0, więc 643 pomiary
 
-    # female under 50k
-    elif row['sex'] == 'Female' and row['Income'] == '<=50K':
-        female_u50.append(row['Age'])
+# TODO: Odchylenie standardowe
 
-    # female over 50k
-    elif row['sex'] == 'Female' and row['Income'] == '>50K':
-        female_o50.append(row['Age'])
-
-
-ax1 = fig.add_subplot(221)
-ax2 = fig.add_subplot(222)
-ax3 = fig.add_subplot(223)
-ax4 = fig.add_subplot(224)
-
-ax1.hist(male_u50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
-             color='r', edgecolor='black', linewidth=0.5)
-ax2.hist(male_o50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
-             color='g', edgecolor='black', linewidth=0.5)
-ax3.hist(female_u50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
-             color='b', edgecolor='black', linewidth=0.5)
-ax4.hist(female_o50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
-             color='k', edgecolor='black', linewidth=0.5)
-
-ax1.ylabel('Ilość osób')
-ax1.xlabel('Wiek')
-ax1.title('Male')
-ax1.subtitle('Rozkład wieku przy dochodach poniniżej 50K')
-
-ax2.ylabel('Ilość osób')
-ax2.xlabel('Wiek')
-ax2.title('Male')
-ax2.subtitle('Rozkład wieku przy dochodach powyżej 50K')
-
-ax3.ylabel('Ilość osób')
-ax3.xlabel('Wiek')
-ax3.title('Female')
-ax3.subtitle('Rozkład wieku przy dochodach poniniżej 50K')
-
-ax4.ylabel('Ilość osób')
-ax4.xlabel('Wiek')
-ax4.title('Female')
-ax4.subtitle('Rozkład wieku przy dochodach powyżej 50K')
-
-plt.show()
-
-# income_list = []
-# for row in df['Income']:
-#     income_list.append(row)
-# print(set(income_list))
-
-# plt.ylabel('Usage')
-# plt.title('Programming language usage')
-#
-# plt.show()
+suma = 0
+liczba_el = len(age_list)
+for i in range(len(age_list)):
+    suma += ((age_list[i] - average)**2)
+s = np.sqrt((suma/(liczba_el-1)))
+print(s)
+# s += ((sum(age_list[i] - average)**2))
+    # print(s)
