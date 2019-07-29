@@ -32,13 +32,8 @@ with open('adultProba.csv', 'r') as excel:
 # from matplotlib import style
 #
 # df = pd.read_csv('adultProba.csv')
-#
-#
 # fig = plt.figure()
-#
-#
-#
-#
+
 # male_u50 = []
 # male_o50 = []
 # female_u50 = []
@@ -126,82 +121,81 @@ for i in range(len(age_list)):
 s = np.sqrt((suma / (liczba_el - 1)))
 # print(s)
 
+# TODO: ###Histogram skategoryzowany
+# import pandas as pd
+# from matplotlib import pyplot as plt
+# import numpy as np
+# from matplotlib import style
 #
-# # TODO: ###Histogram skategoryzowany
-# # import pandas as pd
-# # from matplotlib import pyplot as plt
-# # import numpy as np
-# # from matplotlib import style
-# #
-# # df = pd.read_csv('adultProba.csv')
-# #
-# #
-# # fig = plt.figure()
-# #
-# #
-# #
-# #
-# # male_u50 = []
-# # male_o50 = []
-# # female_u50 = []
-# # female_o50 = []
-# # for index, row in df.iterrows():
-# #     #male under 50k
-# #     if row['sex'] == 'Male' and row['Income'] == '<=50K':
-# #         male_u50.append(row['Age'])
-# #     #male over 50k
-# #     elif row['sex'] == 'Male' and row['Income'] == '>50K':
-# #         male_o50.append(row['Age'])
-# #
-# #     # female under 50k
-# #     elif row['sex'] == 'Female' and row['Income'] == '<=50K':
-# #         female_u50.append(row['Age'])
-# #
-# #     # female over 50k
-# #     elif row['sex'] == 'Female' and row['Income'] == '>50K':
-# #         female_o50.append(row['Age'])
-# #
-# #
-# # ax1 = fig.add_subplot(221)
-# # ax2 = fig.add_subplot(222)
-# # ax3 = fig.add_subplot(223)
-# # ax4 = fig.add_subplot(224)
-# #
-# # ax1.hist(male_u50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
-# #              color='r', edgecolor='black', linewidth=0.5)
-# # ax2.hist(male_o50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
-# #              color='g', edgecolor='black', linewidth=0.5)
-# # ax3.hist(female_u50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
-# #              color='b', edgecolor='black', linewidth=0.5)
-# # ax4.hist(female_o50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
-# #              color='k', edgecolor='black', linewidth=0.5)
-# #
-# # a,b = 0,100
-# #
-# # ax1.set_xlabel('Wiek')
-# # ax1.set_ylabel('Ilość osób')
-# # ax1.set_title('Mężczyźni zarabiający powyżej 50 000')
-# # ax1.set_ylim(a,b)
-# #
-# # ax2.set_xlabel('Wiek')
-# # ax2.set_ylabel('Ilość osób')
-# # ax2.set_title('Mężczyźni zarabiający poniżej 50 000')
-# # ax2.set_ylim(a,b)
-# #
-# # ax3.set_xlabel('Wiek')
-# # ax3.set_ylabel('Ilość osób')
-# # ax3.set_title('Kobiety zarabiający powyżej 50 000')
-# # ax3.set_ylim(a,b)
-# #
-# # ax4.set_xlabel('Wiek')
-# # ax4.set_ylabel('Ilość osób')
-# # ax4.set_title('Kobiety zarabiający poniżej 50 000')
-# # ax4.set_ylim(a,b)
-# #
-# # plt.tight_layout()
-# # plt.show()
+# df = pd.read_csv('adultProba.csv')
 #
-# # TODO: Wartość oczekiwana
+#
+# fig = plt.figure()
+#
+#
+#
+#
+# male_u50 = []
+# male_o50 = []
+# female_u50 = []
+# female_o50 = []
+# for index, row in df.iterrows():
+#     #male under 50k
+#     if row['sex'] == 'Male' and row['Income'] == '<=50K':
+#         male_u50.append(row['Age'])
+#     #male over 50k
+#     elif row['sex'] == 'Male' and row['Income'] == '>50K':
+#         male_o50.append(row['Age'])
+#
+#     # female under 50k
+#     elif row['sex'] == 'Female' and row['Income'] == '<=50K':
+#         female_u50.append(row['Age'])
+#
+#     # female over 50k
+#     elif row['sex'] == 'Female' and row['Income'] == '>50K':
+#         female_o50.append(row['Age'])
+#
+#
+# ax1 = fig.add_subplot(221)
+# ax2 = fig.add_subplot(222)
+# ax3 = fig.add_subplot(223)
+# ax4 = fig.add_subplot(224)
+#
+# ax1.hist(male_u50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
+#              color='r', edgecolor='black', linewidth=0.5)
+# ax2.hist(male_o50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
+#              color='g', edgecolor='black', linewidth=0.5)
+# ax3.hist(female_u50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
+#              color='b', edgecolor='black', linewidth=0.5)
+# ax4.hist(female_o50, bins=[10, 20, 30, 40, 50, 60, 70, 80, 90],
+#              color='k', edgecolor='black', linewidth=0.5)
+#
+# a,b = 0,100
+#
+# ax1.set_xlabel('Wiek')
+# ax1.set_ylabel('Ilość osób')
+# ax1.set_title('Mężczyźni zarabiający powyżej 50 000')
+# ax1.set_ylim(a,b)
+#
+# ax2.set_xlabel('Wiek')
+# ax2.set_ylabel('Ilość osób')
+# ax2.set_title('Mężczyźni zarabiający poniżej 50 000')
+# ax2.set_ylim(a,b)
+#
+# ax3.set_xlabel('Wiek')
+# ax3.set_ylabel('Ilość osób')
+# ax3.set_title('Kobiety zarabiający powyżej 50 000')
+# ax3.set_ylim(a,b)
+#
+# ax4.set_xlabel('Wiek')
+# ax4.set_ylabel('Ilość osób')
+# ax4.set_title('Kobiety zarabiający poniżej 50 000')
+# ax4.set_ylim(a,b)
+#
+# plt.tight_layout()
+# plt.show()
+#
+TODO: Wartość oczekiwana
 # import pandas as pd
 # from matplotlib import pyplot as plt
 # import numpy as np
@@ -227,7 +221,12 @@ s = np.sqrt((suma / (liczba_el - 1)))
 # s = np.sqrt((suma / (liczba_el - 1)))
 # print(s)
 #
-# # TODO: Wykres gęstości
+
+TODO: Wykres gęstości
+# import pandas as pd
+# from matplotlib import pyplot as plt
+# import numpy as np
+# from matplotlib import style
 
 # histogram = plt.hist(adults_age, bins=bins,
 #                      color='g', edgecolor='black', linewidth=0.5, density=True)
@@ -245,7 +244,8 @@ fx_np = np.array(fx)
 # plt.plot(x_np, fx_np, 'red')
 # plt.show()
 # #
-# # TODO: test 3 sigma
+
+# TODO: test 3 sigma
 #
 test_arr = []
 for n in range(643):
@@ -265,7 +265,8 @@ import matplotlib.ticker as mtick
 import math
 
 perc = np.linspace(0,100,len(age_list))
-#
+
+# TODO: słupki na poszczególnych procentach
 fig = plt.figure(1, (7,4))
 ax1 = fig.add_subplot(1,1,1)
 fmt = '%.0f%%'
